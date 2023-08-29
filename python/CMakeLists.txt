@@ -1,7 +1,12 @@
 
 add_subdirectory(pybind11)
+find_package(Eigen3 REQUIRED)
 
-include_directories(${PYTHON_INCLUDE_DIRS})
+include_directories(
+    ${PYTHON_INCLUDE_DIRS}
+    ../include
+    ${EIGEN3_INCLUDE_DIR}
+)
 
 
 pybind11_add_module(pyopengv pyopengv.cpp)
